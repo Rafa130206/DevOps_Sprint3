@@ -122,4 +122,7 @@ Utilize os seguintes JSONs para fazer testes simples:<br/>
 }
 ```
 
+### 9. Acessando Azure SQL Server
+Ao tentar realizar o primeiro login no banco de dados criado na Azure, provavelmente vai dar um erro de IP. Bastar clicar no texto azul do próprio erro que o problema será solucionado. Então é só fazer login novamente! 
+
 
