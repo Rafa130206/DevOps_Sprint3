@@ -34,18 +34,18 @@ API RESTful desenvolvida em **ASP.NET Core** para gerenciar slots, usuários e o
 
 ### 1. Fork do Repositório:
 Faça um Fork desse repositório.
-### 1. Download do arquivo `deploy-autottuapi.sh`:
+### 2. Download do arquivo `deploy-autottuapi.sh`:
 No novo repositório, procure pelo arquivo `deploy-autottuapi.sh`. Clique nele e depois, na direita da tela, clique no ícone com 3 pontos (...) chamado `More Actions`. Em seguida, clique em Download e salve o arquivo no seu computador. Este arquivo possui o script para criar o Seviço de Aplicativo completo.
-### 2. Portal Azure:
+### 3. Portal Azure:
 Faça login no Portal da Microsoft Azure e abra o `Cloud Shell`.
-### 3. Subir o Script:
+### 4. Subir o Script:
 Quando o terminal do Cloud Shell abrir, apertem em `Gerenciar Arquivos` e, em seguida, Carregar. Selecione o arquivo `deploy-autottuapi.sh`, que acabou de ser baixado.
-### 4. Alterar o Script
+### 5. Alterar o Script
 No terminal Cloud Shell, altere para a versão clássica e abra o editor. Selecione o Script e altere a variável `GITHUB_REPO_NAME` (Linha 22) para o nome do seu repositório:
 ```bash
 export GITHUB_REPO_NAME="<seu_usuario_github>/DevOps_Sprint3"
 ```
-### 5. Rodar o Script:
+### 6. Rodar o Script:
 No Cloud Shell, conceda o privilégio de execução nmo Script:
 ```bash
 chmod +x deploy-autottuapi.sh
@@ -56,18 +56,18 @@ Agora execute o Script com o seguinte comando:
 ```
 ⚠️ Ao executar a criação do banco de dados, o Cloud Shell vai pedir para confirmar o procedimento. Digite `y` e pressione `Enter`
 
-### 6. Ativar o Github Actions:
-- 6.1. Copie o código e acesse o link fornecidos pelo Cloud Shell.
-- 6.2. Acesse sua conta do Github, cole o código e conceda as permissões necessárias.
-- 6.3. Retorne ao Cloud Shell e pressione `y` para substituir o WorkFlow existente
+### 7. Ativar o Github Actions:
+- 7.1. Copie o código e acesse o link fornecidos pelo Cloud Shell.
+- 7.2. Acesse sua conta do Github, cole o código e conceda as permissões necessárias.
+- 7.3. Retorne ao Cloud Shell e pressione `y` para substituir o WorkFlow existente
 
-### 7. Build e Deploy:
+### 8. Build e Deploy:
 Na aba Actions do seu repositório, aguarde o build e deploy automático da aplicação. Quando estiver concluído, acesse o link abaixo.
 ```bash
 http://autottu-api-app.azurewebsites.net/swagger/index.html
 ```
 
-### 8. Testes
+### 9. Testes
 Utilize os seguintes JSONs para fazer testes simples:<br/>
 
 **POST**
@@ -124,5 +124,6 @@ Utilize os seguintes JSONs para fazer testes simples:<br/>
 
 ### 9. Acessando Azure SQL Server
 Ao tentar realizar o primeiro login no banco de dados criado na Azure, provavelmente vai dar um erro de IP. Bastar clicar no texto azul do próprio erro que o problema será solucionado. Então é só fazer login novamente! 
+
 
 
