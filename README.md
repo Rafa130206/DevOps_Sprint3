@@ -43,7 +43,7 @@ Quando o terminal do Cloud Shell abrir, apertem em `Gerenciar Arquivos` e, em se
 ### 4. Alterar o Script
 No terminal Cloud Shell, altere para a versão clássica e abra o editor. Selecione o Script e altere a variável `GITHUB_REPO_NAME` (Linha 22) para o nome do seu repositório:
 ```bash
-export GITHUB_REPO_NAME="<seu_usuario>/DevOps_Sprint3"
+export GITHUB_REPO_NAME="<seu_usuario_github>/DevOps_Sprint3"
 ```
 ### 5. Rodar o Script:
 No Cloud Shell, conceda o privilégio de execução nmo Script:
@@ -54,4 +54,16 @@ Agora execute o Script com o seguinte comando:
 ```bash
  ./deploy-autottuapi.sh 
 ```
-⚠️ **Atenção**, ao executar a criação do banco de dados, o Cloud Shell vai pedir para confirmar o procedimento. Digite `y` e pressione `Enter`
+⚠️ Ao executar a criação do banco de dados, o Cloud Shell vai pedir para confirmar o procedimento. Digite `y` e pressione `Enter`
+
+### 6. Ativar o Github Actions:
+- 6.1. Copie o código e acesse o link fornecidos pelo Cloud Shell.
+- 6.2. Acesse sua conta do Github, cole o código e conceda as permissões necessárias.
+- 6.3. Retorne ao Cloud Shell e pressione `y` para substituir o WorkFlow existente
+
+### 7. Build e Deploy:
+Na aba Actions do seu repositório, aguarde o build e deploy automático da aplicação. Quando estiver concluído, acesse o link abaixo e utilize o serviço de aplicativo.
+```bash
+http://autottu-api-app.azurewebsites.net/swagger/index.html
+```
+
