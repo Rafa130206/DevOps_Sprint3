@@ -1,4 +1,4 @@
-﻿# AutoTTU API como App Service
+﻿# AutoTTU API como App Service na Nuvem
 
 API RESTful desenvolvida em **ASP.NET Core** para gerenciar slots, usuários e operações relacionadas funcionando na nuvem como App Service.
 
@@ -34,19 +34,24 @@ API RESTful desenvolvida em **ASP.NET Core** para gerenciar slots, usuários e o
 
 ### 1. Fork do Repositório:
 Faça um Fork desse repositório.
+
 ### 2. Download do arquivo `deploy-autottuapi.sh`:
 No novo repositório, procure pelo arquivo `deploy-autottuapi.sh`. Clique nele e depois, na direita da tela, clique no ícone com 3 pontos (...) chamado `More Actions`. Em seguida, clique em Download e salve o arquivo no seu computador. Este arquivo possui o script para criar o Seviço de Aplicativo completo.
+
 ### 3. Portal Azure:
 Faça login no Portal da Microsoft Azure e abra o `Cloud Shell`.
+
 ### 4. Subir o Script:
-Quando o terminal do Cloud Shell abrir, apertem em `Gerenciar Arquivos` e, em seguida, Carregar. Selecione o arquivo `deploy-autottuapi.sh`, que acabou de ser baixado.
+Quando o terminal do Cloud Shell abrir, aperte em `Gerenciar Arquivos` e, em seguida, Carregar. Selecione o arquivo `deploy-autottuapi.sh`, que acabou de ser baixado.
+
 ### 5. Alterar o Script
-No terminal Cloud Shell, altere para a versão clássica e abra o editor. Selecione o Script e altere a variável `GITHUB_REPO_NAME` (Linha 22) para o nome do seu repositório:
+No terminal Cloud Shell, altere para a versão clássica e abra o editor. Selecione o Script e altere a variável `GITHUB_REPO_NAME` (Linha 22) para o nome do seu usuário do Github:
 ```bash
 export GITHUB_REPO_NAME="<seu_usuario_github>/DevOps_Sprint3"
 ```
+
 ### 6. Rodar o Script:
-No Cloud Shell, conceda o privilégio de execução nmo Script:
+No Cloud Shell, conceda o privilégio de execução no Script:
 ```bash
 chmod +x deploy-autottuapi.sh
 ```
@@ -122,8 +127,9 @@ Utilize os seguintes JSONs para fazer testes simples:<br/>
 }
 ```
 
-### 9. Acessando Azure SQL Server
+### 10. Acessando Azure SQL Server
 Ao tentar realizar o primeiro login no banco de dados criado na Azure, provavelmente vai dar um erro de IP. Bastar clicar no texto azul do próprio erro que o problema será solucionado. Então é só fazer login novamente! 
+
 
 
 
