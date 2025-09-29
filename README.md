@@ -62,8 +62,64 @@ Agora execute o Script com o seguinte comando:
 - 6.3. Retorne ao Cloud Shell e pressione `y` para substituir o WorkFlow existente
 
 ### 7. Build e Deploy:
-Na aba Actions do seu repositório, aguarde o build e deploy automático da aplicação. Quando estiver concluído, acesse o link abaixo e utilize o serviço de aplicativo.
+Na aba Actions do seu repositório, aguarde o build e deploy automático da aplicação. Quando estiver concluído, acesse o link abaixo.
 ```bash
 http://autottu-api-app.azurewebsites.net/swagger/index.html
 ```
+
+### 8. Testes
+Utilize os seguintes JSONs para fazer testes simples:<br/>
+
+**POST**
+```bash
+{
+  "modelo": "Civic EXL",
+  "marca": "Honda",
+  "ano": 2022,
+  "placa": "ABC1D23",
+  "ativoChar": "s",
+  "status": true,
+  "fotoUrl": "https://drive.com/fotos/civic.jpg"
+}
+```
+```bash
+{
+  "modelo": "Corolla Altis",
+  "marca": "Toyota",
+  "ano": 2020,
+  "placa": "XYZ9E88",
+  "ativoChar": "n",
+  "status": false,
+  "fotoUrl": "https://cloud.com/fotos/corolla.jpg"
+}
+```
+
+<br/>
+
+**PUT**
+```bash
+{
+  "idMoto": 1,
+  "modelo": "Civic EXL",
+  "marca": "Honda",
+  "ano": 2022,
+  "placa": "AAA-1234",
+  "ativoChar": "s",
+  "status": true,
+  "fotoUrl": "https://drive.com/fotos/civic.jpg"
+}
+```
+```bash
+{
+  "idMoto": 2,
+  "modelo": "Corolla Altis",
+  "marca": "Toyota",
+  "ano": 2020,
+  "placa": "XYZ9E88",
+  "ativoChar": "s",
+  "status": true,
+  "fotoUrl": "https://cloud.com/fotos/corolla.jpg"
+}
+```
+
 
