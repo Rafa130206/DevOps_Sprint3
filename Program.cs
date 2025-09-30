@@ -40,15 +40,6 @@ Console.WriteLine($"[DB] Server={dbHost},{dbPort}; Database={dbName}; User={dbUs
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));
 
-var app = builder.Build();
-
-using (var scope = app.Services.CreateScope())
-{
-    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    // Aplica TODAS as migrations pendentes no banco configurado (Azure neste caso)
-    await db.Database.MigrateAsync();
-}
-
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("PermitirTudo", policy =>
@@ -58,6 +49,15 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod();
     });
 });
+
+var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    // Aplica TODAS as migrations pendentes no banco configurado (Azure neste caso)
+    await db.Database.MigrateAsync();
+}
 
 app.UseSwagger();
 app.UseSwaggerUI();
