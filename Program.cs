@@ -64,7 +64,7 @@ app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
-app.UseRouting(;
+app.UseRouting();
 app.UseCors("PermitirTudo");
 app.UseAuthorization();
 app.MapControllers();
