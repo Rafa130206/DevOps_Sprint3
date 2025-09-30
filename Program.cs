@@ -49,10 +49,23 @@ using (var scope = app.Services.CreateScope())
     await db.Database.MigrateAsync();
 }
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("PermitirTudo", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
 app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
+
+app.UseCors("PermitirTudo");
+
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
