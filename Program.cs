@@ -16,7 +16,7 @@ string Req(string name)
     return v;
 }
 
-var dbHost = Req("DB_HOST"); // ex: autotutsqlserver123.database.windows.net
+var dbHost = Req("DB_HOST");
 var dbPort = Environment.GetEnvironmentVariable("DB_PORT") ?? "1433";
 var dbName = Req("DB_NAME");
 var dbUser = Req("DB_USER");
@@ -48,6 +48,18 @@ using (var scope = app.Services.CreateScope())
     // Aplica TODAS as migrations pendentes no banco configurado (Azure neste caso)
     await db.Database.MigrateAsync();
 }
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("PermitirTudo", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
+app.UseCors("PermitirTudo");
 
 app.UseSwagger();
 app.UseSwaggerUI();
