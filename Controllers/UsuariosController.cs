@@ -145,9 +145,23 @@ namespace AutoTTU.Controllers
             return NoContent();
         }
 
+        [HttpPost("Login")]
+        public async Task<ActionResult<Usuario>> PostUsuario(Login login)
+        {
+            var user = _context.Usuario
+                .FirstOrDefault(u => u.Email == login.Email && u.Senha == login.Senha);
+            if (user == null)
+                return Unauthorized("Email ou senha inválidos");
+
+            var idToken = Guid.NewGuid().ToString();
+            return Ok(new { message = "Login bem-sucedido", idToken = idToken });
+        }
+
+
         private bool UsuarioExists(int id)
         {
             return _context.Usuario.Any(e => e.IdUsuario == id);
         }
     }
+
 }
